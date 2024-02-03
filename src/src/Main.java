@@ -42,15 +42,25 @@ public class Main {
         for (int i = 0; i < names.length; i++) {
             nameLengths[i] = names[i].length();
         }
+
+        // demonstrating the methods I created below:
+        System.out.println("The word printed x number of times: " + concatenate("Hello", 3));
+        System.out.println("The full name is: " + fullName("John", "Doe"));
+        System.out.println("The sum of the integers is greater than 100: " + sumOfInts(ages2));
+        System.out.println("The average of the doubles is: " + new Main().averageOfDoubles(new double[] {1.0, 2.0, 3.0, 4.0, 5.0}));
+        System.out.println("The average of the first array is greater than the second: " + compareAverages(new double[] {1.0, 2.0, 3.0, 4.0, 5.0}, new double[] {1.0, 2.0, 3.0, 4.0, 5.0}));
+        System.out.println("Will I buy a drink? " + willBuyDrink(true, 11.0));
+        System.out.println(   );
+
         int[] luckyNumbers = lottoPicker();
         System.out.println("My lucky lotto numbers are: " + luckyNumbers[0] + " " + luckyNumbers[1] + " " + luckyNumbers[2] + " " + luckyNumbers[3] + " " + luckyNumbers[4]);
-    }
+    }// end of main, static methods below:
 
     //7. Write a method that takes a String, word, and an int, n, as arguments and returns the word concatenated to itself n number of times. (i.e. if I pass in “Hello” and 3, I expect the method to return “HelloHelloHello”).
     String word = "Hello";
     int n = 3;
 
-    public String concatenate(String word, int n) {
+    public static String concatenate(String word, int n) {
         String result = "";
         for (int i = 0; i < n; i++) {
             result += word;
@@ -59,12 +69,12 @@ public class Main {
     }
 
     //8. Write a method that takes two Strings, firstName and lastName, and returns a full name (the full name should be the first and the last name as a String separated by a space).
-    public String fullName(String firstName, String lastName) {
+    public static String fullName(String firstName, String lastName) {
         return firstName + " " + lastName;
     }
 
     //9. Write a method that takes an array of int and returns true if the sum of all the ints in the array is greater than 100.
-    public boolean sumOfInts(int[] array) {
+    public static boolean sumOfInts(int[] array) {
         int sum = 0;
         for (int i : array) {
             sum += i;
@@ -82,7 +92,7 @@ public class Main {
     }
 
     //11. Write a method that takes two arrays of double and returns true if the average of the elements in the first array is greater than the average of the elements in the second array.
-    public boolean compareAverages(double[] array1, double[] array2) {
+    public static boolean compareAverages(double[] array1, double[] array2) {
         double sum1 = 0;
         double sum2 = 0;
         for (double i : array1) {
@@ -95,7 +105,7 @@ public class Main {
     }
 
     //12. Write a method called willBuyDrink that takes a boolean isHotOutside, and a double moneyInPocket, and returns true if it is hot outside and if moneyInPocket is greater than 10.50.
-    public boolean willBuyDrink(boolean isHotOutside, double moneyInPocket) {
+    public static boolean willBuyDrink(boolean isHotOutside, double moneyInPocket) {
         return isHotOutside && moneyInPocket > 10.50;
     }
 
